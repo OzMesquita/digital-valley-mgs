@@ -154,12 +154,12 @@
 								<c:out value="${etapasAtuais[codSelecao+0].titulo}" />
 								- <b>${etapasAtuais[codSelecao].periodo.dataInicio}</b> até <b>${etapasAtuais[codSelecao].periodo.dataTermino}</b>
 							</h3>
-							<p class="card-text text-justify">
+							<div style="overflow-x: auto; overflow-y: auto; max-height: 300px;">
 								${fn:substring(selecao.descricao, 0, 400)}
 								<c:if test="${fn:length(selecao.descricao) > 400}">
                                     [...]
                                 </c:if>
-							</p>
+							</div>
 							<c:set var="nomeUrl" value="${selecao.titulo}" />
 							<a
 								href="${pageContext.request.contextPath}/selecao/${selecao.codSelecao}"

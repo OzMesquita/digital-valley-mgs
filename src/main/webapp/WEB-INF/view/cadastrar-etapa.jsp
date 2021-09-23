@@ -80,8 +80,8 @@
 						Inscrição</small>
 					<div class="invalid-feedback"></div>
 					<br> <label for="descricaoInput">Descrição*</label>
-					<textarea class="form-control" name="descricao" id="descricaoInput"
-						placeholder="Digite uma breve descrição sobre a etapa" required>${etapa.descricao}</textarea>
+					<textarea name="descricao" id="descricaoInput">
+						</textarea>
 					<div class="invalid-feedback"></div>
 					<br>
 
@@ -274,7 +274,7 @@
 									<button type="button" class="btn btn-secondary btn-sm"
 										data-dismiss="modal">Cancelar</button>
 									<button type="submit" class="btn btn-primary btn-sm"
-										onclick="verificarDescricao()" >Confirmar</button>
+										>Confirmar</button>
 								</div>
 							</div>
 						</div>
@@ -304,6 +304,28 @@
 	<script
 		src="${pageContext.request.contextPath}/resources/js/bootstrap-datepicker.pt-BR.min.js"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/script.js"></script>
+	
+	<script src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript">
+          CKEDITOR.replace('descricao',
+                  {
+                      toolbar:
+                          [
+                              { name: 'styles', items: ['Font', 'FontSize'] },
+                              { name: 'colors', items: ['TextColor', 'BGColor'] },
+                              { name: 'document', items: []},
+                              { name: 'editing', items: [] },
+                              { name: 'forms', items: []},
+                              { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Subscript', 'Superscript', 'RemoveFormat'] },
+                              { name: 'paragraph', items: ['NumberedList', 'BulletedList','JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock','Indent','Outdent']},
+                              { name: 'links', items: [] },
+                              { name: 'insert', items: ['Image', 'HorizontalRule'] },
+                              { name: 'tools', items: [] },
+                              { name: 'clipboard', items: ['Undo','Redo'] },
+                          ]
+                  });
+   	</script>
+	
 	<script>
 		function habilitaEdicao() {
 			document.getElementById('avaliadorInput').disabled = false;
@@ -553,15 +575,7 @@
 	<script
 		src="${pageContext.request.contextPath}/resources/js/cazary.min.js">
 	</script>
-	<script type="text/javascript">
-		(function($, window) {
-			$(function($) {
-				$("textarea#descricaoInput").cazary({
-					commands : "FULL"
-				});
-			});
-		})(jQuery, window);
-	</script>
+	
 
 </body>
 </html>

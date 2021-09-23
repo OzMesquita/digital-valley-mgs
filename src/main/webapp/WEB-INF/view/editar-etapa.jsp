@@ -431,7 +431,7 @@
 								<div class="modal-footer">
 									<button type="button" class="btn btn-secondary btn-sm"
 										data-dismiss="modal">Cancelar</button>
-									<button type="submit" class="btn btn-primary btn-sm" onClick="verificarDescricao()">Confirmar</button>
+									<button type="submit" class="btn btn-primary btn-sm">Confirmar</button>
 								</div>
 							</div>
 						</div>
@@ -700,15 +700,7 @@
 	<script
 		src="${pageContext.request.contextPath}/resources/js/cazary.min.js">
 	</script>
-	<script type="text/javascript">
-		(function($, window) {
-			$(function($) {
-				$("textarea#descricaoInput").cazary({
-					commands : "FULL"
-				});
-			});
-		})(jQuery, window);
-	</script>
+	
 
 </body>
 </html>

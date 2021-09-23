@@ -239,7 +239,8 @@ ul {
 
 				</div>
 				<br>
-				<p class="text-justify">${selecao.descricao}</p>
+				<p class="text-justify"></p>
+				<div style="overflow-x: auto; overflow-y: auto; max-height: 300px;">${selecao.descricao}</div>
 				<p class="text-justify">
 				<hr>
 				<c:if test="${not empty selecao.categoria}">
@@ -247,11 +248,14 @@ ul {
 					<br />
 				</c:if>
 				<c:if test="${not empty selecao.areaDeConcentracao}">
-					<b>ÁREA DE CONCENTRAÇÃO: </b> ${selecao.areaDeConcentracao}<br />
+					<b>ÁREA DE CONCENTRAÇÃO: </b>
+					${selecao.areaDeConcentracao}
+					<br />
 					<br />
 				</c:if>
 				<c:if test="${not empty selecao.descricaoPreRequisitos}">
-					<b>PRÉ REQUISITOS: </b> ${selecao.descricaoPreRequisitos}<br />
+					<b>PRÉ REQUISITOS: </b>
+					<div style="overflow-x: auto; overflow-y: auto; max-height: 300px;">${selecao.descricaoPreRequisitos}</div>
 					<br />
 				</c:if>
 				<c:if

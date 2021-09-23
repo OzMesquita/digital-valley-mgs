@@ -30,8 +30,11 @@ import util.Constantes;
 
 public class Email implements Runnable {
 	
-	private String from = "n2s.mensageiro@gmail.com";
-	private String pass = "n2s@m@1ls3rv1c3";
+	//private String from = "n2s.mensageiro@gmail.com";
+	//private String pass = "n2s@m@1ls3rv1c3";
+	private String from = "n2smensageiro2021@gmail.com";
+	//private String pass = "n2scapivara";
+	private String pass = "DontSendEmails";
 	private Session session;
 	private List<UsuarioBeans> to;
 	private Set<UsuarioBeans> toSet;

@@ -77,15 +77,17 @@
 							Iniciação à Docência - 2018.1</small>
 						<div class="invalid-feedback"></div>
 						<br> <label for="descricaoInput">Descrição*</label>
-						<textarea class="form-control" rows="6" name="descricao"
-							id="descricaoInput"
-							placeholder="Digite uma breve descrição sobre a seleção" required>${selecao.descricao}</textarea>
+						
+						<textarea name="descricao" id="editor">${selecao.descricao}</textarea>
+							
 						<div class="invalid-feedback"></div>
 						<br> <label for="preRequisitosInput"> Pré Requisitos</label>
-						<textarea name="descricaoPreRequisitos" class="form-control"
+						
+						<textarea name="descricaoPreRequisitos"
 							id="preRequisitosInput"
-							placeholder="Digite uma breve descrição sobre os pré requisitos para participar da seleção"
-							readonly="true">${selecao.descricaoPreRequisitos}</textarea>
+							>${selecao.descricaoPreRequisitos}</textarea>
+							
+							
 						<br> <label for="categoriaInput">Categoria*</label> <select
 							type="text" name="categoria" class="form-control custom-select"
 							id="categoriaInput" required>
@@ -249,7 +251,7 @@
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary btn-sm"
 											data-dismiss="modal">Cancelar</button>
-										<button type="submit" class="btn btn-primary btn-sm" onClick="verificarDescricao()">Confirmar</button>
+										<button type="submit" class="btn btn-primary btn-sm">Confirmar</button>
 									</div>
 								</div>
 							</div>
@@ -273,6 +275,33 @@
 		integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
 		crossorigin="anonymous"></script>
 	<script src="${pageContext.request.contextPath}/resources/js/script.js"></script>
+	
+	<script src="${pageContext.request.contextPath}/resources/ckeditor/ckeditor.js"></script>
+	
+	<script type="text/javascript">
+		CKEDITOR.replace('descricao',
+	            {
+	                toolbar:
+	                    [
+	                        { name: 'styles', items: ['Font', 'FontSize'] },
+	                        { name: 'colors', items: ['TextColor', 'BGColor'] },
+	                        { name: 'document', items: []},
+	                        { name: 'editing', items: [] },
+	                        { name: 'forms', items: []},
+	                        { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Subscript', 'Superscript', 'RemoveFormat'] },
+	                        { name: 'paragraph', items: ['NumberedList', 'BulletedList','JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock','Indent','Outdent']},
+	                        { name: 'links', items: [] },
+	                        { name: 'insert', items: ['Image', 'HorizontalRule'] },
+	                        { name: 'tools', items: [] },
+	                        { name: 'clipboard', items: ['Undo','Redo'] },
+	                    ]
+	            });
+   	</script>
+   	<script type="text/javascript">
+          CKEDITOR.replace( 'descricaoPreRequisitos' );
+   	</script>
+	
+	
 	<!-- Include JS file. -->
 	<script type='text/javascript'
 		src='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.5/js/froala_editor.min.js'></script>
@@ -440,16 +469,7 @@
 		src="${pageContext.request.contextPath}/resources/js/cazary.min.js">
 	</script>
 	<script type="text/javascript">
-		(function($, window) {
-			$(function($) {
-				$("textarea#descricaoInput").cazary({
-					commands : "FULL"
-				});
-				$("textarea#preRequisitosInput").cazary({
-					commands : "FULL"
-				});
-			});
-		})(jQuery, window);
+		
 		
 		function verificarDescricao() {
 			let descricao_div = document.getElementsByClassName('cazary')[0];
